@@ -1,0 +1,3543 @@
+# CodeBench Problems Configuration
+# This file contains all problem definitions and metadata
+
+problems:
+  - id: 1
+    title: "Two Sum"
+    difficulty: "Easy"
+    tags: ["Array", "Hash Table", "Google", "Top-50"]
+    method_info:
+      python:
+        method_name: "twoSum"
+        parameters:
+          - name: "nums"
+            type: "List[int]"
+          - name: "target"
+            type: "int"
+        return_type: "List[int]"
+      java:
+        method_name: "twoSum"
+        parameters:
+          - name: "nums"
+            type: "int[]"
+          - name: "target"
+            type: "int"
+        return_type: "int[]"
+    comparison_strategy: "order_independent"
+    description: |
+      Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to target.
+      
+      You may assume that each input would have exactly one solution, and you may not use the same element twice.
+      
+      You can return the answer in any order.
+      
+      **Example 1:**
+      ```
+      Input: nums = [2,7,11,15], target = 9
+      Output: [0,1]
+      Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+      ```
+      
+      **Example 2:**
+      ```
+      Input: nums = [3,2,4], target = 6
+      Output: [1,2]
+      ```
+      
+      **Example 3:**
+      ```
+      Input: nums = [3,3], target = 6
+      Output: [0,1]
+      ```
+      
+      **Constraints:**
+      - `2 <= nums.length <= 10^4`
+      - `-10^9 <= nums[i] <= 10^9`
+      - `-10^9 <= target <= 10^9`
+      - Only one valid answer exists.
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def twoSum(self, nums: List[int], target: int) -> List[int]:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int[] twoSum(int[] nums, int target) {
+                // Your code here
+                return new int[0];
+            }
+        }
+    test_cases:
+      - input:
+          nums: [2, 7, 11, 15]
+          target: 9
+        expected: [0, 1]
+      - input:
+          nums: [3, 2, 4]
+          target: 6
+        expected: [1, 2]
+      - input:
+          nums: [3, 3]
+          target: 6
+        expected: [0, 1]
+
+  - id: 2
+    title: "Add Two Numbers"
+    difficulty: "Medium"
+    tags: ["Linked List", "Math", "Recursion", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "addTwoNumbers"
+        parameters:
+          - name: "l1"
+            type: "ListNode"
+            is_linked_list: true
+          - name: "l2"
+            type: "ListNode"
+            is_linked_list: true
+        return_type: "ListNode"
+        return_is_linked_list: true
+      java:
+        method_name: "addTwoNumbers"
+        parameters:
+          - name: "l1"
+            type: "ListNode"
+            is_linked_list: true
+          - name: "l2"
+            type: "ListNode"
+            is_linked_list: true
+        return_type: "ListNode"
+        return_is_linked_list: true
+        helper_classes: |
+          class ListNode {
+              int val;
+              ListNode next;
+              ListNode() {}
+              ListNode(int val) { this.val = val; }
+              ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+          }
+    comparison_strategy: "exact"
+    description: |
+      You are given two **non-empty** linked lists representing two non-negative integers. The digits are stored in **reverse order**, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+      
+      You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+      
+      **Example 1:**
+      ```
+      Input: l1 = [2,4,3], l2 = [5,6,4]
+      Output: [7,0,8]
+      Explanation: 342 + 465 = 807.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: l1 = [0], l2 = [0]
+      Output: [0]
+      ```
+      
+      **Example 3:**
+      ```
+      Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+      Output: [8,9,9,9,0,0,0,1]
+      ```
+      
+      **Constraints:**
+      - The number of nodes in each linked list is in the range `[1, 100]`.
+      - `0 <= Node.val <= 9`
+      - It is guaranteed that the list represents a number that does not have leading zeros.
+    templates:
+      python: |
+        # Definition for singly-linked list.
+        # class ListNode:
+        #     def __init__(self, val=0, next=None):
+        #         self.val = val
+        #         self.next = next
+        
+        class Solution:
+            def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+                # Your code here
+                pass
+      java: |
+        /**
+         * Definition for singly-linked list.
+         * public class ListNode {
+         *     int val;
+         *     ListNode next;
+         *     ListNode() {}
+         *     ListNode(int val) { this.val = val; }
+         *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+         * }
+         */
+        class Solution {
+            public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+                // Your code here
+                return null;
+            }
+        }
+    test_cases:
+      - input:
+          l1: [2, 4, 3]
+          l2: [5, 6, 4]
+        expected: [7, 0, 8]
+      - input:
+          l1: [0]
+          l2: [0]
+        expected: [0]
+      - input:
+          l1: [9, 9, 9, 9, 9, 9, 9]
+          l2: [9, 9, 9, 9]
+        expected: [8, 9, 9, 9, 0, 0, 0, 1]
+
+  - id: 3
+    title: "Longest Substring Without Repeating Characters"
+    difficulty: "Medium"
+    tags: ["Hash Table", "String", "Sliding Window", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "lengthOfLongestSubstring"
+        parameters:
+          - name: "s"
+            type: "str"
+        return_type: "int"
+      java:
+        method_name: "lengthOfLongestSubstring"
+        parameters:
+          - name: "s"
+            type: "String"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      Given a string `s`, find the length of the **longest substring** without repeating characters.
+      
+      **Example 1:**
+      ```
+      Input: s = "abcabcbb"
+      Output: 3
+      Explanation: The answer is "abc", with the length of 3.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = "bbbbb"
+      Output: 1
+      Explanation: The answer is "b", with the length of 1.
+      ```
+      
+      **Example 3:**
+      ```
+      Input: s = "pwwkew"
+      Output: 3
+      Explanation: The answer is "wke", with the length of 3.
+      Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+      ```
+      
+      **Constraints:**
+      - `0 <= s.length <= 5 * 10^4`
+      - `s` consists of English letters, digits, symbols and spaces.
+    templates:
+      python: |
+        class Solution:
+            def lengthOfLongestSubstring(self, s: str) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int lengthOfLongestSubstring(String s) {
+                // Your code here
+                return 0;
+            }
+        }
+    test_cases:
+      - input:
+          s: "abcabcbb"
+        expected: 3
+      - input:
+          s: "bbbbb"
+        expected: 1
+      - input:
+          s: "pwwkew"
+        expected: 3
+      - input:
+          s: ""
+        expected: 0
+
+  - id: 4
+    title: "Valid Parentheses"
+    difficulty: "Easy"
+    tags: ["String", "Stack", "Google", "Microsoft", "Top-50"]
+    method_info:
+      python:
+        method_name: "isValid"
+        parameters:
+          - name: "s"
+            type: "str"
+        return_type: "bool"
+      java:
+        method_name: "isValid"
+        parameters:
+          - name: "s"
+            type: "String"
+        return_type: "boolean"
+    comparison_strategy: "exact"
+    description: |
+      Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.
+      
+      An input string is valid if:
+      1. Open brackets must be closed by the same type of brackets.
+      2. Open brackets must be closed in the correct order.
+      3. Every close bracket has a corresponding open bracket of the same type.
+      
+      **Example 1:**
+      ```
+      Input: s = "()"
+      Output: true
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = "()[]{}"
+      Output: true
+      ```
+      
+      **Example 3:**
+      ```
+      Input: s = "(]"
+      Output: false
+      ```
+      
+      **Constraints:**
+      - `1 <= s.length <= 10^4`
+      - `s` consists of parentheses only `'()[]{}'`.
+    templates:
+      python: |
+        class Solution:
+            def isValid(self, s: str) -> bool:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public boolean isValid(String s) {
+                // Your code here
+                return false;
+            }
+        }
+    test_cases:
+      - input:
+          s: "()"
+        expected: true
+      - input:
+          s: "()[]{}"
+        expected: true
+      - input:
+          s: "(]"
+        expected: false
+      - input:
+          s: "([)]"
+        expected: false
+      - input:
+          s: "{[]}"
+        expected: true
+
+  - id: 5
+    title: "Best Time to Buy and Sell Stock"
+    difficulty: "Easy"
+    tags: ["Array", "Dynamic Programming", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "maxProfit"
+        parameters:
+          - name: "prices"
+            type: "List[int]"
+        return_type: "int"
+      java:
+        method_name: "maxProfit"
+        parameters:
+          - name: "prices"
+            type: "int[]"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      You are given an array `prices` where `prices[i]` is the price of a given stock on the `ith` day.
+      
+      You want to maximize your profit by choosing a **single day** to buy one stock and choosing a **different day in the future** to sell that stock.
+      
+      Return the **maximum profit** you can achieve from this transaction. If you cannot achieve any profit, return `0`.
+      
+      **Example 1:**
+      ```
+      Input: prices = [7,1,5,3,6,4]
+      Output: 5
+      Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+      Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: prices = [7,6,4,3,1]
+      Output: 0
+      Explanation: In this case, no transactions are done and the max profit = 0.
+      ```
+      
+      **Constraints:**
+      - `1 <= prices.length <= 10^5`
+      - `0 <= prices[i] <= 10^4`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def maxProfit(self, prices: List[int]) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int maxProfit(int[] prices) {
+                // Your code here
+                return 0;
+            }
+        }
+    test_cases:
+      - input:
+          prices: [7, 1, 5, 3, 6, 4]
+        expected: 5
+      - input:
+          prices: [7, 6, 4, 3, 1]
+        expected: 0
+      - input:
+          prices: [1, 2, 3, 4, 5]
+        expected: 4
+
+  - id: 6
+    title: "Sudoku Solver"
+    difficulty: "Hard"
+    tags: ["Array", "Backtracking", "Matrix", "Google", "Microsoft", "Top-50"]
+    method_info:
+      python:
+        method_name: "solveSudoku"
+        parameters:
+          - name: "board"
+            type: "List[List[str]]"
+            is_mutable: true
+        return_type: "None"
+        returns_modified_input: "board"
+      java:
+        method_name: "solveSudoku"
+        parameters:
+          - name: "board"
+            type: "char[][]"
+            is_mutable: true
+        return_type: "void"
+        returns_modified_input: "board"
+    comparison_strategy: "exact"
+    description: |
+      Write a program to solve a Sudoku puzzle by filling the empty cells.
+      
+      A Sudoku solution must satisfy **all of the following rules:**
+      1. Each of the digits `1-9` must occur exactly once in each row.
+      2. Each of the digits `1-9` must occur exactly once in each column.
+      3. Each of the digits `1-9` must occur exactly once in each of the 9 `3x3` sub-boxes of the grid.
+      
+      The `'.'` character indicates empty cells.
+      
+      **Example 1:**
+      ```
+      Input: board = [["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]
+      Output: [["5","3","4","6","7","8","9","1","2"],["6","7","2","1","9","5","3","4","8"],["1","9","8","3","4","2","5","6","7"],["8","5","9","7","6","1","4","2","3"],["4","2","6","8","5","3","7","9","1"],["7","1","3","9","2","4","8","5","6"],["9","6","1","5","3","7","2","8","4"],["2","8","7","4","1","9","6","3","5"],["3","4","5","2","8","6","1","7","9"]]
+      ```
+      
+      **Constraints:**
+      - `board.length == 9`
+      - `board[i].length == 9`
+      - `board[i][j]` is a digit or `'.'`.
+      - It is **guaranteed** that the input board has only one solution.
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def solveSudoku(self, board: List[List[str]]) -> None:
+                """
+                Do not return anything, modify board in-place instead.
+                """
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public void solveSudoku(char[][] board) {
+                // Your code here
+            }
+        }
+    test_cases:
+      - input:
+          board: [["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]
+        expected: [["5","3","4","6","7","8","9","1","2"],["6","7","2","1","9","5","3","4","8"],["1","9","8","3","4","2","5","6","7"],["8","5","9","7","6","1","4","2","3"],["4","2","6","8","5","3","7","9","1"],["7","1","3","9","2","4","8","5","6"],["9","6","1","5","3","7","2","8","4"],["2","8","7","4","1","9","6","3","5"],["3","4","5","2","8","6","1","7","9"]]
+
+  - id: 7
+    title: "Median of Two Sorted Arrays"
+    difficulty: "Hard"
+    tags: ["Array", "Binary Search", "Divide and Conquer", "Google", "Top-50"]
+    method_info:
+      python:
+        method_name: "findMedianSortedArrays"
+        parameters:
+          - name: "nums1"
+            type: "List[int]"
+          - name: "nums2"
+            type: "List[int]"
+        return_type: "float"
+      java:
+        method_name: "findMedianSortedArrays"
+        parameters:
+          - name: "nums1"
+            type: "int[]"
+          - name: "nums2"
+            type: "int[]"
+        return_type: "double"
+    comparison_strategy: "exact"
+    description: |
+      Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, return the **median** of the two sorted arrays.
+      
+      The overall run time complexity should be `O(log (m+n))`.
+      
+      **Example 1:**
+      ```
+      Input: nums1 = [1,3], nums2 = [2]
+      Output: 2.00000
+      Explanation: merged array = [1,2,3] and median is 2.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: nums1 = [1,2], nums2 = [3,4]
+      Output: 2.50000
+      Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+      ```
+      
+      **Constraints:**
+      - `nums1.length == m`
+      - `nums2.length == n`
+      - `0 <= m <= 1000`
+      - `0 <= n <= 1000`
+      - `1 <= m + n <= 2000`
+      - `-10^6 <= nums1[i], nums2[i] <= 10^6`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+                // Your code here
+                return 0.0;
+            }
+        }
+    test_cases:
+      - input:
+          nums1: [1, 3]
+          nums2: [2]
+        expected: 2.0
+      - input:
+          nums1: [1, 2]
+          nums2: [3, 4]
+        expected: 2.5
+      - input:
+          nums1: [0, 0]
+          nums2: [0, 0]
+        expected: 0.0
+
+  - id: 8
+    title: "Container With Most Water"
+    difficulty: "Medium"
+    tags: ["Array", "Two Pointers", "Greedy", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "maxArea"
+        parameters:
+          - name: "height"
+            type: "List[int]"
+        return_type: "int"
+      java:
+        method_name: "maxArea"
+        parameters:
+          - name: "height"
+            type: "int[]"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      You are given an integer array `height` of length `n`. There are `n` vertical lines drawn such that the two endpoints of the `ith` line are `(i, 0)` and `(i, height[i])`.
+      
+      Find two lines that together with the x-axis form a container, such that the container contains the most water.
+      
+      Return the maximum amount of water a container can store.
+      
+      **Notice** that you may not slant the container.
+      
+      **Example 1:**
+      ```
+      Input: height = [1,8,6,2,5,4,8,3,7]
+      Output: 49
+      Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: height = [1,1]
+      Output: 1
+      ```
+      
+      **Constraints:**
+      - `n == height.length`
+      - `2 <= n <= 10^5`
+      - `0 <= height[i] <= 10^4`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def maxArea(self, height: List[int]) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int maxArea(int[] height) {
+                // Your code here
+                return 0;
+            }
+        }
+    test_cases:
+      - input:
+          height: [1, 8, 6, 2, 5, 4, 8, 3, 7]
+        expected: 49
+      - input:
+          height: [1, 1]
+        expected: 1
+      - input:
+          height: [4, 3, 2, 1, 4]
+        expected: 16
+
+  - id: 9
+    title: "3Sum"
+    difficulty: "Medium"
+    tags: ["Array", "Two Pointers", "Sorting", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "threeSum"
+        parameters:
+          - name: "nums"
+            type: "List[int]"
+        return_type: "List[List[int]]"
+      java:
+        method_name: "threeSum"
+        parameters:
+          - name: "nums"
+            type: "int[]"
+        return_type: "List<List<Integer>>"
+    comparison_strategy: "order_independent"
+    description: |
+      Given an integer array `nums`, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.
+      
+      Notice that the solution set must not contain duplicate triplets.
+      
+      **Example 1:**
+      ```
+      Input: nums = [-1,0,1,2,-1,-4]
+      Output: [[-1,-1,2],[-1,0,1]]
+      Explanation: 
+      nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+      nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+      The distinct triplets are [-1,0,1] and [-1,-1,2].
+      Notice that the order of the output and the order of the triplets does not matter.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: nums = [0,1,1]
+      Output: []
+      Explanation: The only possible triplet does not sum up to 0.
+      ```
+      
+      **Example 3:**
+      ```
+      Input: nums = [0,0,0]
+      Output: [[0,0,0]]
+      Explanation: The only possible triplet sums up to 0.
+      ```
+      
+      **Constraints:**
+      - `3 <= nums.length <= 3000`
+      - `-10^5 <= nums[i] <= 10^5`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def threeSum(self, nums: List[int]) -> List[List[int]]:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public List<List<Integer>> threeSum(int[] nums) {
+                // Your code here
+                return new ArrayList<>();
+            }
+        }
+    test_cases:
+      - input:
+          nums: [-1, 0, 1, 2, -1, -4]
+        expected: [[-1, -1, 2], [-1, 0, 1]]
+      - input:
+          nums: [0, 1, 1]
+        expected: []
+      - input:
+          nums: [0, 0, 0]
+        expected: [[0, 0, 0]]
+
+  - id: 10
+    title: "Remove Duplicates from Sorted Array"
+    difficulty: "Easy"
+    tags: ["Array", "Two Pointers", "Google", "Microsoft", "Top-50"]
+    method_info:
+      python:
+        method_name: "removeDuplicates"
+        parameters:
+          - name: "nums"
+            type: "List[int]"
+            is_mutable: true
+        return_type: "int"
+        returns_modified_input: "nums"
+      java:
+        method_name: "removeDuplicates"
+        parameters:
+          - name: "nums"
+            type: "int[]"
+            is_mutable: true
+        return_type: "int"
+        returns_modified_input: "nums"
+    comparison_strategy: "exact"
+    description: |
+      Given an integer array `nums` sorted in **non-decreasing order**, remove the duplicates **in-place** such that each unique element appears only **once**. The **relative order** of the elements should be kept the **same**.
+      
+      Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the **first part** of the array `nums`. More formally, if there are `k` elements after removing the duplicates, then the first `k` elements of `nums` should hold the final result. It does not matter what you leave beyond the first `k` elements.
+      
+      Return `k` *after placing the final result in the first* `k` *slots of* `nums`.
+      
+      **Do not** allocate extra space for another array. You must do this by **modifying the input array in-place** with O(1) extra memory.
+      
+      **Example 1:**
+      ```
+      Input: nums = [1,1,2]
+      Output: 2, nums = [1,2,_]
+      Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
+      It does not matter what you leave beyond the returned k (hence they are underscores).
+      ```
+      
+      **Example 2:**
+      ```
+      Input: nums = [0,0,1,1,1,2,2,3,3,4]
+      Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+      Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
+      It does not matter what you leave beyond the returned k (hence they are underscores).
+      ```
+      
+      **Constraints:**
+      - `1 <= nums.length <= 3 * 10^4`
+      - `-100 <= nums[i] <= 100`
+      - `nums` is sorted in **non-decreasing** order.
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def removeDuplicates(self, nums: List[int]) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int removeDuplicates(int[] nums) {
+                // Your code here
+                return 0;
+            }
+        }
+    test_cases:
+      - input:
+          nums: [1, 1, 2]
+        expected: 2
+      - input:
+          nums: [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+        expected: 5
+      - input:
+          nums: [1, 2, 3]
+        expected: 3
+
+  - id: 11
+    title: "Search in Rotated Sorted Array"
+    difficulty: "Medium"
+    tags: ["Array", "Binary Search", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "search"
+        parameters:
+          - name: "nums"
+            type: "List[int]"
+          - name: "target"
+            type: "int"
+        return_type: "int"
+      java:
+        method_name: "search"
+        parameters:
+          - name: "nums"
+            type: "int[]"
+          - name: "target"
+            type: "int"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      There is an integer array `nums` sorted in ascending order (with **distinct** values).
+      
+      Prior to being passed to your function, `nums` is **possibly rotated** at an unknown pivot index `k` (`1 <= k < nums.length`) such that the resulting array is `[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]` (0-indexed). For example, `[0,1,2,4,5,6,7]` might be rotated at pivot index `3` and become `[4,5,6,7,0,1,2]`.
+      
+      Given the array `nums` **after** the possible rotation and an integer `target`, return the index of `target` if it is in `nums`, or `-1` if it is not in `nums`.
+      
+      You must write an algorithm with `O(log n)` runtime complexity.
+      
+      **Example 1:**
+      ```
+      Input: nums = [4,5,6,7,0,1,2], target = 0
+      Output: 4
+      ```
+      
+      **Example 2:**
+      ```
+      Input: nums = [4,5,6,7,0,1,2], target = 3
+      Output: -1
+      ```
+      
+      **Example 3:**
+      ```
+      Input: nums = [1], target = 0
+      Output: -1
+      ```
+      
+      **Constraints:**
+      - `1 <= nums.length <= 5000`
+      - `-10^4 <= nums[i] <= 10^4`
+      - All values of `nums` are **unique**.
+      - `nums` is an ascending array that is possibly rotated.
+      - `-10^4 <= target <= 10^4`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def search(self, nums: List[int], target: int) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int search(int[] nums, int target) {
+                // Your code here
+                return -1;
+            }
+        }
+    test_cases:
+      - input:
+          nums: [4, 5, 6, 7, 0, 1, 2]
+          target: 0
+        expected: 4
+      - input:
+          nums: [4, 5, 6, 7, 0, 1, 2]
+          target: 3
+        expected: -1
+      - input:
+          nums: [1]
+          target: 0
+        expected: -1
+
+  - id: 12
+    title: "Find First and Last Position of Element in Sorted Array"
+    difficulty: "Medium"
+    tags: ["Array", "Binary Search", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "searchRange"
+        parameters:
+          - name: "nums"
+            type: "List[int]"
+          - name: "target"
+            type: "int"
+        return_type: "List[int]"
+      java:
+        method_name: "searchRange"
+        parameters:
+          - name: "nums"
+            type: "int[]"
+          - name: "target"
+            type: "int"
+        return_type: "int[]"
+    comparison_strategy: "exact"
+    description: |
+      Given an array of integers `nums` sorted in non-decreasing order, find the starting and ending position of a given `target` value.
+      
+      If `target` is not found in the array, return `[-1, -1]`.
+      
+      You must write an algorithm with `O(log n)` runtime complexity.
+      
+      **Example 1:**
+      ```
+      Input: nums = [5,7,7,8,8,10], target = 8
+      Output: [3,4]
+      ```
+      
+      **Example 2:**
+      ```
+      Input: nums = [5,7,7,8,8,10], target = 6
+      Output: [-1,-1]
+      ```
+      
+      **Example 3:**
+      ```
+      Input: nums = [], target = 0
+      Output: [-1,-1]
+      ```
+      
+      **Constraints:**
+      - `0 <= nums.length <= 10^5`
+      - `-10^9 <= nums[i] <= 10^9`
+      - `nums` is a non-decreasing array.
+      - `-10^9 <= target <= 10^9`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def searchRange(self, nums: List[int], target: int) -> List[int]:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int[] searchRange(int[] nums, int target) {
+                // Your code here
+                return new int[]{-1, -1};
+            }
+        }
+    test_cases:
+      - input:
+          nums: [5, 7, 7, 8, 8, 10]
+          target: 8
+        expected: [3, 4]
+      - input:
+          nums: [5, 7, 7, 8, 8, 10]
+          target: 6
+        expected: [-1, -1]
+      - input:
+          nums: []
+          target: 0
+        expected: [-1, -1]
+
+  - id: 13
+    title: "Combination Sum"
+    difficulty: "Medium"
+    tags: ["Array", "Backtracking", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "combinationSum"
+        parameters:
+          - name: "candidates"
+            type: "List[int]"
+          - name: "target"
+            type: "int"
+        return_type: "List[List[int]]"
+      java:
+        method_name: "combinationSum"
+        parameters:
+          - name: "candidates"
+            type: "int[]"
+          - name: "target"
+            type: "int"
+        return_type: "List<List<Integer>>"
+    comparison_strategy: "order_independent"
+    description: |
+      Given an array of **distinct** integers `candidates` and a target integer `target`, return a list of all **unique combinations** of `candidates` where the chosen numbers sum to `target`. You may return the combinations in **any order**.
+      
+      The **same** number may be chosen from `candidates` an **unlimited number of times**. Two combinations are unique if the frequency of at least one of the chosen numbers is different.
+      
+      The test cases are generated such that the number of unique combinations that sum up to `target` is less than `150` combinations for the given input.
+      
+      **Example 1:**
+      ```
+      Input: candidates = [2,3,6,7], target = 7
+      Output: [[2,2,3],[7]]
+      Explanation:
+      2 and 3 are candidates, and 2 + 2 + 3 = 7. Note that 2 can be used multiple times.
+      7 is a candidate, and 7 = 7.
+      These are the only two combinations.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: candidates = [2,3,5], target = 8
+      Output: [[2,2,2,2],[2,3,3],[3,5]]
+      ```
+      
+      **Example 3:**
+      ```
+      Input: candidates = [2], target = 1
+      Output: []
+      ```
+      
+      **Constraints:**
+      - `1 <= candidates.length <= 30`
+      - `2 <= candidates[i] <= 40`
+      - All elements of `candidates` are **distinct**.
+      - `1 <= target <= 40`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public List<List<Integer>> combinationSum(int[] candidates, int target) {
+                // Your code here
+                return new ArrayList<>();
+            }
+        }
+    test_cases:
+      - input:
+          candidates: [2, 3, 6, 7]
+          target: 7
+        expected: [[2, 2, 3], [7]]
+      - input:
+          candidates: [2, 3, 5]
+          target: 8
+        expected: [[2, 2, 2, 2], [2, 3, 3], [3, 5]]
+      - input:
+          candidates: [2]
+          target: 1
+        expected: []
+
+  - id: 14
+    title: "Rotate Image"
+    difficulty: "Medium"
+    tags: ["Array", "Math", "Matrix", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "rotate"
+        parameters:
+          - name: "matrix"
+            type: "List[List[int]]"
+            is_mutable: true
+        return_type: "None"
+        returns_modified_input: "matrix"
+      java:
+        method_name: "rotate"
+        parameters:
+          - name: "matrix"
+            type: "int[][]"
+            is_mutable: true
+        return_type: "void"
+        returns_modified_input: "matrix"
+    comparison_strategy: "exact"
+    description: |
+      You are given an `n x n` 2D `matrix` representing an image, rotate the image by **90 degrees (clockwise)**.
+      
+      You have to rotate the image **in-place**, which means you have to modify the input 2D matrix directly. **DO NOT** allocate another 2D matrix and do the rotation.
+      
+      **Example 1:**
+      ```
+      Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+      Output: [[7,4,1],[8,5,2],[9,6,3]]
+      ```
+      
+      **Example 2:**
+      ```
+      Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+      Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
+      ```
+      
+      **Constraints:**
+      - `n == matrix.length == matrix[i].length`
+      - `1 <= n <= 20`
+      - `-1000 <= matrix[i][j] <= 1000`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def rotate(self, matrix: List[List[int]]) -> None:
+                """
+                Do not return anything, modify matrix in-place instead.
+                """
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public void rotate(int[][] matrix) {
+                // Your code here
+            }
+        }
+    test_cases:
+      - input:
+          matrix: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        expected: [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+      - input:
+          matrix: [[5, 1, 9, 11], [2, 4, 8, 10], [13, 3, 6, 7], [15, 14, 12, 16]]
+        expected: [[15, 13, 2, 5], [14, 3, 4, 1], [12, 6, 8, 9], [16, 7, 10, 11]]
+
+  - id: 15
+    title: "Group Anagrams"
+    difficulty: "Medium"
+    tags: ["Array", "Hash Table", "String", "Sorting", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "groupAnagrams"
+        parameters:
+          - name: "strs"
+            type: "List[str]"
+        return_type: "List[List[str]]"
+      java:
+        method_name: "groupAnagrams"
+        parameters:
+          - name: "strs"
+            type: "String[]"
+        return_type: "List<List<String>>"
+    comparison_strategy: "order_independent"
+    description: |
+      Given an array of strings `strs`, group **the anagrams** together. You can return the answer in **any order**.
+      
+      An **Anagram** is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+      
+      **Example 1:**
+      ```
+      Input: strs = ["eat","tea","tan","ate","nat","bat"]
+      Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+      ```
+      
+      **Example 2:**
+      ```
+      Input: strs = [""]
+      Output: [[""]]
+      ```
+      
+      **Example 3:**
+      ```
+      Input: strs = ["a"]
+      Output: [["a"]]
+      ```
+      
+      **Constraints:**
+      - `1 <= strs.length <= 10^4`
+      - `0 <= strs[i].length <= 100`
+      - `strs[i]` consists of lowercase English letters only.
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public List<List<String>> groupAnagrams(String[] strs) {
+                // Your code here
+                return new ArrayList<>();
+            }
+        }
+    test_cases:
+      - input:
+          strs: ["eat", "tea", "tan", "ate", "nat", "bat"]
+        expected: [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]
+      - input:
+          strs: [""]
+        expected: [[""]]
+      - input:
+          strs: ["a"]
+        expected: [["a"]]
+
+  - id: 16
+    title: "Maximum Subarray"
+    difficulty: "Medium"
+    tags: ["Array", "Divide and Conquer", "Dynamic Programming", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "maxSubArray"
+        parameters:
+          - name: "nums"
+            type: "List[int]"
+        return_type: "int"
+      java:
+        method_name: "maxSubArray"
+        parameters:
+          - name: "nums"
+            type: "int[]"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      Given an integer array `nums`, find the **subarray** with the largest sum, and return *its sum*.
+      
+      **Example 1:**
+      ```
+      Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+      Output: 6
+      Explanation: The subarray [4,-1,2,1] has the largest sum 6.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: nums = [1]
+      Output: 1
+      Explanation: The subarray [1] has the largest sum 1.
+      ```
+      
+      **Example 3:**
+      ```
+      Input: nums = [5,4,-1,7,8]
+      Output: 23
+      Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
+      ```
+      
+      **Constraints:**
+      - `1 <= nums.length <= 10^5`
+      - `-10^4 <= nums[i] <= 10^4`
+      
+      **Follow up:** If you have figured out the `O(n)` solution, try coding another solution using the **divide and conquer** approach, which is more subtle.
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def maxSubArray(self, nums: List[int]) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int maxSubArray(int[] nums) {
+                // Your code here
+                return 0;
+            }
+        }
+    test_cases:
+      - input:
+          nums: [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+        expected: 6
+      - input:
+          nums: [1]
+        expected: 1
+      - input:
+          nums: [5, 4, -1, 7, 8]
+        expected: 23
+
+  - id: 17
+    title: "Spiral Matrix"
+    difficulty: "Medium"
+    tags: ["Array", "Matrix", "Simulation", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "spiralOrder"
+        parameters:
+          - name: "matrix"
+            type: "List[List[int]]"
+        return_type: "List[int]"
+      java:
+        method_name: "spiralOrder"
+        parameters:
+          - name: "matrix"
+            type: "int[][]"
+        return_type: "List<Integer>"
+    comparison_strategy: "exact"
+    description: |
+      Given an `m x n` `matrix`, return *all elements of the* `matrix` *in spiral order*.
+      
+      **Example 1:**
+      ```
+      Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+      Output: [1,2,3,6,9,8,7,4,5]
+      ```
+      
+      **Example 2:**
+      ```
+      Input: matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+      Output: [1,2,3,4,8,12,11,10,9,5,6,7]
+      ```
+      
+      **Constraints:**
+      - `m == matrix.length`
+      - `n == matrix[i].length`
+      - `1 <= m, n <= 10`
+      - `-100 <= matrix[i][j] <= 100`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public List<Integer> spiralOrder(int[][] matrix) {
+                // Your code here
+                return new ArrayList<>();
+            }
+        }
+    test_cases:
+      - input:
+          matrix: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        expected: [1, 2, 3, 6, 9, 8, 7, 4, 5]
+      - input:
+          matrix: [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+        expected: [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
+
+  - id: 18
+    title: "Jump Game"
+    difficulty: "Medium"
+    tags: ["Array", "Dynamic Programming", "Greedy", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "canJump"
+        parameters:
+          - name: "nums"
+            type: "List[int]"
+        return_type: "bool"
+      java:
+        method_name: "canJump"
+        parameters:
+          - name: "nums"
+            type: "int[]"
+        return_type: "boolean"
+    comparison_strategy: "exact"
+    description: |
+      You are given an integer array `nums`. You are initially positioned at the array's **first index**, and each element in the array represents your maximum jump length at that position.
+      
+      Return `true` *if you can reach the last index, or* `false` *otherwise*.
+      
+      **Example 1:**
+      ```
+      Input: nums = [2,3,1,1,4]
+      Output: true
+      Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: nums = [3,2,1,0,4]
+      Output: false
+      Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
+      ```
+      
+      **Constraints:**
+      - `1 <= nums.length <= 10^4`
+      - `0 <= nums[i] <= 10^5`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def canJump(self, nums: List[int]) -> bool:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public boolean canJump(int[] nums) {
+                // Your code here
+                return false;
+            }
+        }
+    test_cases:
+      - input:
+          nums: [2, 3, 1, 1, 4]
+        expected: true
+      - input:
+          nums: [3, 2, 1, 0, 4]
+        expected: false
+      - input:
+          nums: [0]
+        expected: true
+
+  - id: 19
+    title: "Merge Intervals"
+    difficulty: "Medium"
+    tags: ["Array", "Sorting", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "merge"
+        parameters:
+          - name: "intervals"
+            type: "List[List[int]]"
+        return_type: "List[List[int]]"
+      java:
+        method_name: "merge"
+        parameters:
+          - name: "intervals"
+            type: "int[][]"
+        return_type: "int[][]"
+    comparison_strategy: "order_independent"
+    description: |
+      Given an array of `intervals` where `intervals[i] = [starti, endi]`, merge all overlapping intervals, and return *an array of the non-overlapping intervals that cover all the intervals in the input*.
+      
+      **Example 1:**
+      ```
+      Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
+      Output: [[1,6],[8,10],[15,18]]
+      Explanation: Since intervals [1,3] and [2,6] overlap, merge them into [1,6].
+      ```
+      
+      **Example 2:**
+      ```
+      Input: intervals = [[1,4],[4,5]]
+      Output: [[1,5]]
+      Explanation: Intervals [1,4] and [4,5] are considered overlapping.
+      ```
+      
+      **Constraints:**
+      - `1 <= intervals.length <= 10^4`
+      - `intervals[i].length == 2`
+      - `0 <= starti <= endi <= 10^4`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int[][] merge(int[][] intervals) {
+                // Your code here
+                return new int[0][0];
+            }
+        }
+    test_cases:
+      - input:
+          intervals: [[1, 3], [2, 6], [8, 10], [15, 18]]
+        expected: [[1, 6], [8, 10], [15, 18]]
+      - input:
+          intervals: [[1, 4], [4, 5]]
+        expected: [[1, 5]]
+      - input:
+          intervals: [[1, 4], [2, 3]]
+        expected: [[1, 4]]
+
+  - id: 20
+    title: "Insert Interval"
+    difficulty: "Medium"
+    tags: ["Array", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "insert"
+        parameters:
+          - name: "intervals"
+            type: "List[List[int]]"
+          - name: "newInterval"
+            type: "List[int]"
+        return_type: "List[List[int]]"
+      java:
+        method_name: "insert"
+        parameters:
+          - name: "intervals"
+            type: "int[][]"
+          - name: "newInterval"
+            type: "int[]"
+        return_type: "int[][]"
+    comparison_strategy: "order_independent"
+    description: |
+      You are given an array of non-overlapping intervals `intervals` where `intervals[i] = [starti, endi]` represent the start and the end of the `ith` interval and `intervals` is sorted in ascending order by `starti`. You are also given an interval `newInterval = [start, end]` that represents the start and end of another interval.
+      
+      Insert `newInterval` into `intervals` such that `intervals` is still sorted in ascending order by `starti` and `intervals` still does not have any overlapping intervals (merge overlapping intervals if necessary).
+      
+      Return `intervals` *after the insertion*.
+      
+      **Example 1:**
+      ```
+      Input: intervals = [[1,3],[6,9]], newInterval = [2,5]
+      Output: [[1,5],[6,9]]
+      ```
+      
+      **Example 2:**
+      ```
+      Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
+      Output: [[1,2],[3,10],[12,16]]
+      Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
+      ```
+      
+      **Constraints:**
+      - `0 <= intervals.length <= 10^4`
+      - `intervals[i].length == 2`
+      - `0 <= starti <= endi <= 10^5`
+      - `intervals` is sorted by `starti` in **ascending** order.
+      - `newInterval.length == 2`
+      - `0 <= start <= end <= 10^5`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int[][] insert(int[][] intervals, int[] newInterval) {
+                // Your code here
+                return new int[0][0];
+            }
+        }
+    test_cases:
+      - input:
+          intervals: [[1, 3], [6, 9]]
+          newInterval: [2, 5]
+        expected: [[1, 5], [6, 9]]
+      - input:
+          intervals: [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]
+          newInterval: [4, 8]
+        expected: [[1, 2], [3, 10], [12, 16]]
+      - input:
+          intervals: []
+          newInterval: [5, 7]
+        expected: [[5, 7]]
+
+  - id: 21
+    title: "Word Ladder"
+    difficulty: "Hard"
+    tags: ["Hash Table", "String", "Breadth-First Search", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "ladderLength"
+        parameters:
+          - name: "beginWord"
+            type: "str"
+          - name: "endWord"
+            type: "str"
+          - name: "wordList"
+            type: "List[str]"
+        return_type: "int"
+      java:
+        method_name: "ladderLength"
+        parameters:
+          - name: "beginWord"
+            type: "String"
+          - name: "endWord"
+            type: "String"
+          - name: "wordList"
+            type: "List<String>"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      A **transformation sequence** from word `beginWord` to word `endWord` using a dictionary `wordList` is a sequence of words `beginWord -> s1 -> s2 -> ... -> sk` such that:
+      
+      - Every adjacent pair of words differs by a single letter.
+      - Every `si` for `1 <= i <= k` is in `wordList`. Note that `beginWord` does not need to be in `wordList`.
+      - `sk == endWord`
+      
+      Given two words, `beginWord` and `endWord`, and a dictionary `wordList`, return *the **number of words** in the shortest transformation sequence from* `beginWord` *to* `endWord`*, or `0` if no such sequence exists.
+      
+      **Example 1:**
+      ```
+      Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]
+      Output: 5
+      Explanation: One shortest transformation sequence is "hit" -> "hot" -> "dot" -> "dog" -> "cog", which is 5 words long.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log"]
+      Output: 0
+      Explanation: The endWord "cog" is not in wordList, therefore there is no valid transformation sequence.
+      ```
+      
+      **Constraints:**
+      - `1 <= beginWord.length <= 10`
+      - `endWord.length == beginWord.length`
+      - `1 <= wordList.length <= 5000`
+      - `wordList[i].length == beginWord.length`
+      - `beginWord`, `endWord`, and all words in `wordList` consist of lowercase English letters only.
+      - All the strings in `wordList` are **unique**.
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+                // Your code here
+                return 0;
+            }
+        }
+    test_cases:
+      - input:
+          beginWord: "hit"
+          endWord: "cog"
+          wordList: ["hot", "dot", "dog", "lot", "log", "cog"]
+        expected: 5
+      - input:
+          beginWord: "hit"
+          endWord: "cog"
+          wordList: ["hot", "dot", "dog", "lot", "log"]
+        expected: 0
+      - input:
+          beginWord: "a"
+          endWord: "c"
+          wordList: ["a", "b", "c"]
+        expected: 2
+
+  - id: 22
+    title: "Word Search"
+    difficulty: "Medium"
+    tags: ["Array", "Backtracking", "Matrix", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "exist"
+        parameters:
+          - name: "board"
+            type: "List[List[str]]"
+          - name: "word"
+            type: "str"
+        return_type: "bool"
+      java:
+        method_name: "exist"
+        parameters:
+          - name: "board"
+            type: "char[][]"
+          - name: "word"
+            type: "String"
+        return_type: "boolean"
+    comparison_strategy: "exact"
+    description: |
+      Given an `m x n` grid of characters `board` and a string `word`, return `true` *if* `word` *exists in the grid*.
+      
+      The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
+      
+      **Example 1:**
+      ```
+      Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"
+      Output: true
+      ```
+      
+      **Example 2:**
+      ```
+      Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "SEE"
+      Output: true
+      ```
+      
+      **Example 3:**
+      ```
+      Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCB"
+      Output: false
+      ```
+      
+      **Constraints:**
+      - `m == board.length`
+      - `n = board[i].length`
+      - `1 <= m, n <= 6`
+      - `1 <= word.length <= 15`
+      - `board` and `word` consists of only lowercase and uppercase English letters.
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def exist(self, board: List[List[str]], word: str) -> bool:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public boolean exist(char[][] board, String word) {
+                // Your code here
+                return false;
+            }
+        }
+    test_cases:
+      - input:
+          board: [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
+          word: "ABCCED"
+        expected: true
+      - input:
+          board: [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
+          word: "SEE"
+        expected: true
+      - input:
+          board: [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
+          word: "ABCB"
+        expected: false
+
+  - id: 23
+    title: "Course Schedule"
+    difficulty: "Medium"
+    tags: ["Depth-First Search", "Breadth-First Search", "Graph", "Topological Sort", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "canFinish"
+        parameters:
+          - name: "numCourses"
+            type: "int"
+          - name: "prerequisites"
+            type: "List[List[int]]"
+        return_type: "bool"
+      java:
+        method_name: "canFinish"
+        parameters:
+          - name: "numCourses"
+            type: "int"
+          - name: "prerequisites"
+            type: "int[][]"
+        return_type: "boolean"
+    comparison_strategy: "exact"
+    description: |
+      There are a total of `numCourses` courses you have to take, labeled from `0` to `numCourses - 1`. You are given an array `prerequisites` where `prerequisites[i] = [ai, bi]` indicates that you **must** take course `bi` first if you want to take course `ai`.
+      
+      - For example, the pair `[0, 1]`, indicates that to take course `0` you have to first take course `1`.
+      
+      Return `true` if you can finish all courses. Otherwise, return `false`.
+      
+      **Example 1:**
+      ```
+      Input: numCourses = 2, prerequisites = [[1,0]]
+      Output: true
+      Explanation: There are a total of 2 courses to take. 
+      To take course 1 you should have finished course 0. So it is possible.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: numCourses = 2, prerequisites = [[1,0],[0,1]]
+      Output: false
+      Explanation: There are a total of 2 courses to take. 
+      To take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So it is impossible.
+      ```
+      
+      **Constraints:**
+      - `1 <= numCourses <= 2000`
+      - `0 <= prerequisites.length <= 5000`
+      - `prerequisites[i].length == 2`
+      - `0 <= ai, bi < numCourses`
+      - All the pairs `prerequisites[i]` are **unique**.
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public boolean canFinish(int numCourses, int[][] prerequisites) {
+                // Your code here
+                return false;
+            }
+        }
+    test_cases:
+      - input:
+          numCourses: 2
+          prerequisites: [[1, 0]]
+        expected: true
+      - input:
+          numCourses: 2
+          prerequisites: [[1, 0], [0, 1]]
+        expected: false
+      - input:
+          numCourses: 1
+          prerequisites: []
+        expected: true
+
+  - id: 24
+    title: "Course Schedule II"
+    difficulty: "Medium"
+    tags: ["Depth-First Search", "Breadth-First Search", "Graph", "Topological Sort", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "findOrder"
+        parameters:
+          - name: "numCourses"
+            type: "int"
+          - name: "prerequisites"
+            type: "List[List[int]]"
+        return_type: "List[int]"
+      java:
+        method_name: "findOrder"
+        parameters:
+          - name: "numCourses"
+            type: "int"
+          - name: "prerequisites"
+            type: "int[][]"
+        return_type: "int[]"
+    comparison_strategy: "exact"
+    description: |
+      There are a total of `numCourses` courses you have to take, labeled from `0` to `numCourses - 1`. You are given an array `prerequisites` where `prerequisites[i] = [ai, bi]` indicates that you **must** take course `bi` first if you want to take course `ai`.
+      
+      - For example, the pair `[0, 1]`, indicates that to take course `0` you have to first take course `1`.
+      
+      Return the ordering of courses you should take to finish all courses. If there are many valid answers, return **any** of them. If it is impossible to finish all courses, return **an empty array**.
+      
+      **Example 1:**
+      ```
+      Input: numCourses = 2, prerequisites = [[1,0]]
+      Output: [0,1]
+      Explanation: There are a total of 2 courses to take. To take course 1 you should have finished course 0. So the correct course order is [0,1].
+      ```
+      
+      **Example 2:**
+      ```
+      Input: numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]
+      Output: [0,1,2,3] or [0,2,1,3]
+      Explanation: There are a total of 4 courses to take. To take course 3 you should have finished both courses 1 and 2. Both courses 1 and 2 should be taken after you finished course 0.
+      So one correct course order is [0,1,2,3]. Another correct ordering is [0,2,1,3].
+      ```
+      
+      **Example 3:**
+      ```
+      Input: numCourses = 1, prerequisites = []
+      Output: [0]
+      ```
+      
+      **Constraints:**
+      - `1 <= numCourses <= 2000`
+      - `0 <= prerequisites.length <= numCourses * (numCourses - 1)`
+      - `prerequisites[i].length == 2`
+      - `0 <= ai, bi < numCourses`
+      - `ai != bi`
+      - All the pairs `[ai, bi]` are **distinct**.
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int[] findOrder(int numCourses, int[][] prerequisites) {
+                // Your code here
+                return new int[0];
+            }
+        }
+    test_cases:
+      - input:
+          numCourses: 2
+          prerequisites: [[1, 0]]
+        expected: [0, 1]
+      - input:
+          numCourses: 4
+          prerequisites: [[1, 0], [2, 0], [3, 1], [3, 2]]
+        expected: [0, 1, 2, 3]
+      - input:
+          numCourses: 1
+          prerequisites: []
+        expected: [0]
+
+  - id: 25
+    title: "Minimum Window Substring"
+    difficulty: "Hard"
+    tags: ["Hash Table", "String", "Sliding Window", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "minWindow"
+        parameters:
+          - name: "s"
+            type: "str"
+          - name: "t"
+            type: "str"
+        return_type: "str"
+      java:
+        method_name: "minWindow"
+        parameters:
+          - name: "s"
+            type: "String"
+          - name: "t"
+            type: "String"
+        return_type: "String"
+    comparison_strategy: "exact"
+    description: |
+      Given two strings `s` and `t` of lengths `m` and `n` respectively, return the **minimum window substring** of `s` such that every character in `t` (including duplicates) is included in the window. If there is no such window, return the empty string `""`.
+      
+      The testcases will be generated such that the answer is **unique**.
+      
+      A **substring** is a contiguous sequence of characters within the string.
+      
+      **Example 1:**
+      ```
+      Input: s = "ADOBECODEBANC", t = "ABC"
+      Output: "BANC"
+      Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = "a", t = "a"
+      Output: "a"
+      Explanation: The entire string s is the minimum window.
+      ```
+      
+      **Example 3:**
+      ```
+      Input: s = "a", t = "aa"
+      Output: ""
+      Explanation: Both 'a's from t must be included in the window.
+      Since the largest window of s only has one 'a', return empty string.
+      ```
+      
+      **Constraints:**
+      - `m == s.length`
+      - `n == t.length`
+      - `1 <= m, n <= 10^5`
+      - `s` and `t` consist of uppercase and lowercase English letters.
+      
+      **Follow up:** Could you find an algorithm that runs in `O(m + n)` time?
+    templates:
+      python: |
+        class Solution:
+            def minWindow(self, s: str, t: str) -> str:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public String minWindow(String s, String t) {
+                // Your code here
+                return "";
+            }
+        }
+    test_cases:
+      - input:
+          s: "ADOBECODEBANC"
+          t: "ABC"
+        expected: "BANC"
+      - input:
+          s: "a"
+          t: "a"
+        expected: "a"
+      - input:
+          s: "a"
+          t: "aa"
+        expected: ""
+
+  - id: 26
+    title: "Substring with Concatenation of All Words"
+    difficulty: "Hard"
+    tags: ["Hash Table", "String", "Sliding Window", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "findSubstring"
+        parameters:
+          - name: "s"
+            type: "str"
+          - name: "words"
+            type: "List[str]"
+        return_type: "List[int]"
+      java:
+        method_name: "findSubstring"
+        parameters:
+          - name: "s"
+            type: "String"
+          - name: "words"
+            type: "String[]"
+        return_type: "List<Integer>"
+    comparison_strategy: "order_independent"
+    description: |
+      You are given a string `s` and an array of strings `words`. All the strings of `words` are of **the same length**. A **concatenated substring** in `s` is a substring that contains all the strings of any permutation of `words` concatenated.
+      
+      - For example, if `words = ["ab","cd","ef"]`, then `"abcdef"`, `"abefcd"`, `"cdabef"`, `"cdefab"`, `"efabcd"`, and `"efcdab"` are all concatenated strings. `"acdbef"` is not a concatenated substring because it is not the concatenation of any permutation of `words`.
+      
+      Return *the starting indices of all the concatenated substrings in* `s`. You can return the answer in **any order**.
+      
+      **Example 1:**
+      ```
+      Input: s = "barfoothefoobarman", words = ["foo","bar"]
+      Output: [0,9]
+      Explanation: Since words.length == 2 and words[i].length == 3, the concatenated substring has to be of length 6.
+      Substring starting at index 0 is "barfoo". It is the concatenation of ["bar","foo"] which is a permutation of words.
+      Substring starting at index 9 is "foobar". It is the concatenation of ["foo","bar"] which is a permutation of words.
+      The output order does not matter. Returning [9,0] is fine too.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = "wordgoodgoodgoodbestword", words = ["word","good","best","word"]
+      Output: []
+      Explanation: Since words.length == 4 and words[i].length == 4, the concatenated substring has to be of length 16.
+      Substring starting at index 0 is "wordgoodgoodgoodbestword". It is the concatenation of ["word","good","good","best"] which is a permutation of words, but "good" appears twice.
+      Substring starting at index 3 is "dgoodgoodgoodbestword". It is the concatenation of ["d","good","good","good","best","word"] which is not a permutation of words.
+      Substring starting at index 8 is "goodgoodgoodbestword". It is the concatenation of ["good","good","good","best","word"] which is not a permutation of words.
+      Substring starting at index 12 is "goodbestword". It is the concatenation of ["good","best","word"] which is not a permutation of words.
+      ```
+      
+      **Example 3:**
+      ```
+      Input: s = "barfoofoobarthefoobarman", words = ["bar","foo","the"]
+      Output: [6,9,12]
+      Explanation: Since words.length == 3 and words[i].length == 3, the concatenated substring has to be of length 9.
+      Substring starting at index 6 is "foobarthe". It is the concatenation of ["foo","bar","the"] which is a permutation of words.
+      Substring starting at index 9 is "barthefoo". It is the concatenation of ["bar","the","foo"] which is a permutation of words.
+      Substring starting at index 12 is "thefoobar". It is the concatenation of ["the","foo","bar"] which is a permutation of words.
+      ```
+      
+      **Constraints:**
+      - `1 <= s.length <= 10^4`
+      - `1 <= words.length <= 5000`
+      - `1 <= words[i].length <= 30`
+      - `s` and `words[i]` consist of lowercase English letters only.
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def findSubstring(self, s: str, words: List[str]) -> List[int]:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public List<Integer> findSubstring(String s, String[] words) {
+                // Your code here
+                return new ArrayList<>();
+            }
+        }
+    test_cases:
+      - input:
+          s: "barfoothefoobarman"
+          words: ["foo", "bar"]
+        expected: [0, 9]
+      - input:
+          s: "wordgoodgoodgoodbestword"
+          words: ["word", "good", "best", "word"]
+        expected: []
+      - input:
+          s: "barfoofoobarthefoobarman"
+          words: ["bar", "foo", "the"]
+        expected: [6, 9, 12]
+
+  - id: 27
+    title: "Longest Consecutive Sequence"
+    difficulty: "Medium"
+    tags: ["Array", "Hash Table", "Union Find", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "longestConsecutive"
+        parameters:
+          - name: "nums"
+            type: "List[int]"
+        return_type: "int"
+      java:
+        method_name: "longestConsecutive"
+        parameters:
+          - name: "nums"
+            type: "int[]"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      Given an unsorted array of integers `nums`, return the length of the longest consecutive elements sequence.
+      
+      You must write an algorithm that runs in `O(n)` time.
+      
+      **Example 1:**
+      ```
+      Input: nums = [100,4,200,1,3,2]
+      Output: 4
+      Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: nums = [0,3,7,2,5,8,4,6,0,1]
+      Output: 9
+      ```
+      
+      **Constraints:**
+      - `0 <= nums.length <= 10^5`
+      - `-10^9 <= nums[i] <= 10^9`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def longestConsecutive(self, nums: List[int]) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int longestConsecutive(int[] nums) {
+                // Your code here
+                return 0;
+            }
+        }
+    test_cases:
+      - input:
+          nums: [100, 4, 200, 1, 3, 2]
+        expected: 4
+      - input:
+          nums: [0, 3, 7, 2, 5, 8, 4, 6, 0, 1]
+        expected: 9
+      - input:
+          nums: []
+        expected: 0
+
+  - id: 28
+    title: "Clone Graph"
+    difficulty: "Medium"
+    tags: ["Hash Table", "Depth-First Search", "Breadth-First Search", "Graph", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "cloneGraph"
+        parameters:
+          - name: "node"
+            type: "Node"
+        return_type: "Node"
+      java:
+        method_name: "cloneGraph"
+        parameters:
+          - name: "node"
+            type: "Node"
+        return_type: "Node"
+        helper_classes: |
+          class Node {
+              public int val;
+              public List<Node> neighbors;
+              public Node() {
+                  val = 0;
+                  neighbors = new ArrayList<Node>();
+              }
+              public Node(int _val) {
+                  val = _val;
+                  neighbors = new ArrayList<Node>();
+              }
+              public Node(int _val, ArrayList<Node> _neighbors) {
+                  val = _val;
+                  neighbors = _neighbors;
+              }
+          }
+    comparison_strategy: "exact"
+    description: |
+      Given a reference of a node in a **connected** undirected graph.
+      
+      Return a **deep copy** (clone) of the graph.
+      
+      Each node in the graph contains a value (`int`) and a list (`List[Node]`) of its neighbors.
+      
+      ```
+      class Node {
+          public int val;
+          public List<Node> neighbors;
+      }
+      ```
+      
+      **Test case format:**
+      
+      For simplicity, each node's value is the same as the node's index (1-indexed). For example, the first node with `val == 1`, the second node with `val == 2`, and so on. The graph is represented in the test case using an adjacency list.
+      
+      **Adjacency list** is a collection of unordered **lists** used to represent a finite graph. Each list describes the set of neighbors of a node in the graph.
+      
+      The given node will always be the first node with `val = 1`. You must return the **copy of the given node** as a reference to the cloned graph.
+      
+      **Example 1:**
+      ```
+      Input: adjList = [[2,4],[1,3],[2,4],[1,3]]
+      Output: [[2,4],[1,3],[2,4],[1,3]]
+      Explanation: There are 4 nodes in the graph.
+      1st node (val = 1)'s neighbors are 2nd node (val = 2) and 4th node (val = 4).
+      2nd node (val = 2)'s neighbors are 1st node (val = 1) and 3rd node (val = 3).
+      3rd node (val = 3)'s neighbors are 2nd node (val = 2) and 4th node (val = 4).
+      4th node (val = 4)'s neighbors are 1st node (val = 1) and 3rd node (val = 3).
+      ```
+      
+      **Example 2:**
+      ```
+      Input: adjList = [[]]
+      Output: [[]]
+      Explanation: Note that the input contains one empty list. The graph consists of only one node with val = 1 and it does not have any neighbors.
+      ```
+      
+      **Example 3:**
+      ```
+      Input: adjList = []
+      Output: []
+      Explanation: This an empty graph, it does not have any nodes.
+      ```
+      
+      **Constraints:**
+      - The number of nodes in the graph is in the range `[0, 100]`.
+      - `1 <= Node.val <= 100`
+      - `Node.val` is unique for each node.
+      - There are no repeated edges and no self-loops in the graph.
+      - The Graph is connected and all nodes can be visited starting from the given node.
+    templates:
+      python: |
+        # Definition for a Node.
+        # class Node:
+        #     def __init__(self, val = 0, neighbors = None):
+        #         self.val = val
+        #         self.neighbors = neighbors if neighbors is not None else []
+        
+        class Solution:
+            def cloneGraph(self, node: 'Node') -> 'Node':
+                # Your code here
+                pass
+      java: |
+        /*
+        // Definition for a Node.
+        class Node {
+            public int val;
+            public List<Node> neighbors;
+            public Node() {
+                val = 0;
+                neighbors = new ArrayList<Node>();
+            }
+            public Node(int _val) {
+                val = _val;
+                neighbors = new ArrayList<Node>();
+            }
+            public Node(int _val, ArrayList<Node> _neighbors) {
+                val = _val;
+                neighbors = _neighbors;
+            }
+        }
+        */
+        class Solution {
+            public Node cloneGraph(Node node) {
+                // Your code here
+                return null;
+            }
+        }
+    test_cases:
+      - input:
+          node: [[2, 4], [1, 3], [2, 4], [1, 3]]
+        expected: [[2, 4], [1, 3], [2, 4], [1, 3]]
+      - input:
+          node: [[]]
+        expected: [[]]
+      - input:
+          node: []
+        expected: []
+
+  - id: 29
+    title: "Gas Station"
+    difficulty: "Medium"
+    tags: ["Array", "Greedy", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "canCompleteCircuit"
+        parameters:
+          - name: "gas"
+            type: "List[int]"
+          - name: "cost"
+            type: "List[int]"
+        return_type: "int"
+      java:
+        method_name: "canCompleteCircuit"
+        parameters:
+          - name: "gas"
+            type: "int[]"
+          - name: "cost"
+            type: "int[]"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      There are `n` gas stations along a circular route, where the amount of gas at the `ith` station is `gas[i]`.
+      
+      You have a car with an unlimited gas tank and it costs `cost[i]` of gas to travel from the `ith` station to its next `(i + 1)th` station. You begin the journey with an empty tank at one of the gas stations.
+      
+      Given two integer arrays `gas` and `cost`, return *the starting gas station's index if you can travel around the circuit once in the clockwise direction, otherwise return* `-1`. If there exists a solution, it is **guaranteed** to be **unique**.
+      
+      **Example 1:**
+      ```
+      Input: gas = [1,2,3,4,5], cost = [3,4,5,1,2]
+      Output: 3
+      Explanation:
+      Start at station 3 (index 3) and fill up with 4 unit of gas. Your tank = 0 + 4 = 4
+      Travel to station 4. Your tank = 4 - 1 + 5 = 8
+      Travel to station 0. Your tank = 8 - 2 + 1 = 7
+      Travel to station 1. Your tank = 7 - 3 + 2 = 6
+      Travel to station 2. Your tank = 6 - 4 + 3 = 5
+      Travel to station 3. The cost is 5. Your gas is just enough to travel back to station 3.
+      Therefore, return 3 as the starting index.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: gas = [2,3,4], cost = [3,4,3]
+      Output: -1
+      Explanation:
+      You can't start at station 0 or 1, as there is not enough gas to travel to the next station.
+      Let's start at station 2 and fill up with 4 unit of gas. Your tank = 0 + 4 = 4
+      Travel to station 0. Your tank = 4 - 3 + 2 = 3
+      Travel to station 1. Your tank = 3 - 4 + 3 = 2
+      Travel to station 2. The cost is 3. Your gas is just enough to travel back to station 2.
+      Therefore, return 2 as the starting index.
+      ```
+      
+      **Constraints:**
+      - `gas.length == n`
+      - `cost.length == n`
+      - `1 <= n <= 10^5`
+      - `0 <= gas[i], cost[i] <= 10^4`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int canCompleteCircuit(int[] gas, int[] cost) {
+                // Your code here
+                return -1;
+            }
+        }
+    test_cases:
+      - input:
+          gas: [1, 2, 3, 4, 5]
+          cost: [3, 4, 5, 1, 2]
+        expected: 3
+      - input:
+          gas: [2, 3, 4]
+          cost: [3, 4, 3]
+        expected: -1
+      - input:
+          gas: [5, 1, 2, 3, 4]
+          cost: [4, 4, 1, 5, 1]
+        expected: 4
+
+  - id: 30
+    title: "Candy"
+    difficulty: "Hard"
+    tags: ["Array", "Greedy", "Google", "Amazon", "Top-50"]
+    method_info:
+      python:
+        method_name: "candy"
+        parameters:
+          - name: "ratings"
+            type: "List[int]"
+        return_type: "int"
+      java:
+        method_name: "candy"
+        parameters:
+          - name: "ratings"
+            type: "int[]"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      There are `n` children standing in a line. Each child is assigned a rating value given in the integer array `ratings`.
+      
+      You are giving candies to these children subjected to the following requirements:
+      
+      - Each child must have at least one candy.
+      - Children with a higher rating get more candies than their neighbors.
+      
+      Return *the minimum number of candies you need to have to distribute the candies to the children*.
+      
+      **Example 1:**
+      ```
+      Input: ratings = [1,0,2]
+      Output: 5
+      Explanation: You can allocate to the first, second and third child with 2, 1, 2 candies respectively.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: ratings = [1,2,2]
+      Output: 4
+      Explanation: You can allocate to the first, second and third child with 1, 2, 1 candies respectively.
+      The third child gets 1 candy because it satisfies the above two conditions.
+      ```
+      
+      **Constraints:**
+      - `n == ratings.length`
+      - `1 <= n <= 2 * 10^4`
+      - `0 <= ratings[i] <= 2 * 10^4`
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def candy(self, ratings: List[int]) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int candy(int[] ratings) {
+                // Your code here
+                return 0;
+            }
+        }
+    test_cases:
+      - input:
+          ratings: [1, 0, 2]
+        expected: 5
+      - input:
+          ratings: [1, 2, 2]
+        expected: 4
+      - input:
+          ratings: [1, 3, 2, 2, 1]
+        expected: 7
+
+  - id: 31
+    title: "Longest Palindromic Substring"
+    difficulty: "Medium"
+    tags: ["String", "Dynamic Programming", "Top-50"]
+    method_info:
+      python:
+        method_name: "longestPalindrome"
+        parameters:
+          - name: "s"
+            type: "str"
+        return_type: "str"
+      java:
+        method_name: "longestPalindrome"
+        parameters:
+          - name: "s"
+            type: "String"
+        return_type: "String"
+    comparison_strategy: "exact"
+    description: |
+      Given a string `s`, return the longest palindromic substring in `s`.
+      
+      **Example 1:**
+      ```
+      Input: s = "babad"
+      Output: "bab"
+      Explanation: "aba" is also a valid answer.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = "cbbd"
+      Output: "bb"
+      ```
+      
+      **Constraints:**
+      - `1 <= s.length <= 1000`
+      - `s` consist of only digits and English letters.
+    templates:
+      python: |
+        class Solution:
+            def longestPalindrome(self, s: str) -> str:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public String longestPalindrome(String s) {
+                // Your code here
+                return "";
+            }
+        }
+    test_cases:
+      - input:
+          s: "babad"
+        expected: "bab"
+      - input:
+          s: "cbbd"
+        expected: "bb"
+      - input:
+          s: "a"
+        expected: "a"
+
+  - id: 32
+    title: "Zigzag Conversion"
+    difficulty: "Medium"
+    tags: ["String", "Top-50"]
+    method_info:
+      python:
+        method_name: "convert"
+        parameters:
+          - name: "s"
+            type: "str"
+          - name: "numRows"
+            type: "int"
+        return_type: "str"
+      java:
+        method_name: "convert"
+        parameters:
+          - name: "s"
+            type: "String"
+          - name: "numRows"
+            type: "int"
+        return_type: "String"
+    comparison_strategy: "exact"
+    description: |
+      The string `"PAYPALISHIRING"` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+      
+      ```
+      P   A   H   N
+      A P L S I I G
+      Y   I   R
+      ```
+      
+      And then read line by line: `"PAHNAPLSIIGYIR"`
+      
+      Write the code that will take a string and make this conversion given a number of rows:
+      
+      **Example 1:**
+      ```
+      Input: s = "PAYPALISHIRING", numRows = 3
+      Output: "PAHNAPLSIIGYIR"
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = "PAYPALISHIRING", numRows = 4
+      Output: "PINALSIGYAHRPI"
+      Explanation:
+      P     I    N
+      A   L S  I G
+      Y A   H R
+      P     I
+      ```
+      
+      **Example 3:**
+      ```
+      Input: s = "A", numRows = 1
+      Output: "A"
+      ```
+      
+      **Constraints:**
+      - `1 <= s.length <= 1000`
+      - `s` consists of English letters (lower-case and upper-case), `','` and `'.'`.
+      - `1 <= numRows <= 1000`
+    templates:
+      python: |
+        class Solution:
+            def convert(self, s: str, numRows: int) -> str:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public String convert(String s, int numRows) {
+                // Your code here
+                return "";
+            }
+        }
+    test_cases:
+      - input:
+          s: "PAYPALISHIRING"
+          numRows: 3
+        expected: "PAHNAPLSIIGYIR"
+      - input:
+          s: "PAYPALISHIRING"
+          numRows: 4
+        expected: "PINALSIGYAHRPI"
+      - input:
+          s: "A"
+          numRows: 1
+        expected: "A"
+
+  - id: 33
+    title: "String to Integer (atoi)"
+    difficulty: "Medium"
+    tags: ["String", "Top-50"]
+    method_info:
+      python:
+        method_name: "myAtoi"
+        parameters:
+          - name: "s"
+            type: "str"
+        return_type: "int"
+      java:
+        method_name: "myAtoi"
+        parameters:
+          - name: "s"
+            type: "String"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      Implement the `myAtoi(string s)` function, which converts a string to a 32-bit signed integer (similar to C/C++'s `atoi` function).
+      
+      The algorithm for `myAtoi(string s)` is as follows:
+      
+      1. Read in and ignore any leading whitespace.
+      2. Check if the next character (if not already at the end of the string) is `'-'` or `'+'`. Read this character in if it is either. This determines if the final result is negative or positive respectively. Assume the result is positive if neither is present.
+      3. Read in next the characters until the next non-digit character or the end of the input is reached. The rest of the string is ignored.
+      4. Convert these digits into an integer (i.e. `"123" -> 123`, `"0032" -> 32`). If no digits were read, then the integer is `0`. Change the sign as necessary (from step 2).
+      5. If the integer is out of the 32-bit signed integer range `[-2^31, 2^31 - 1]`, then clamp the integer so that it remains in the range. Specifically, integers less than `-2^31` should be clamped to `-2^31`, and integers greater than `2^31 - 1` should be clamped to `2^31 - 1`.
+      6. Return the integer as the final result.
+      
+      **Note:**
+      - Only the space character `' '` is considered a whitespace character.
+      - **Do not ignore** any characters other than the leading whitespace or the rest of the string after the digits.
+      
+      **Example 1:**
+      ```
+      Input: s = "42"
+      Output: 42
+      Explanation: The underlined characters are what is read in, the caret is the current reader position.
+      Step 1: "42" (no characters read because there is no leading whitespace)
+               ^
+      Step 2: "42" (no characters read because there is neither a '-' nor '+')
+               ^
+      Step 3: "42" ("42" is read in)
+                 ^
+      The parsed integer is 42.
+      Since 42 is in the range [-2^31, 2^31 - 1], the final result is 42.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = "   -42"
+      Output: -42
+      Explanation:
+      Step 1: "   -42" (leading whitespace is read and ignored)
+                  ^
+      Step 2: "   -42" ('-' is read, so the result should be negative)
+                   ^
+      Step 3: "   -42" ("42" is read in)
+                     ^
+      The parsed integer is -42.
+      Since -42 is in the range [-2^31, 2^31 - 1], the final result is -42.
+      ```
+      
+      **Example 3:**
+      ```
+      Input: s = "4193 with words"
+      Output: 4193
+      Explanation:
+      Step 1: "4193 with words" (no characters read because there is no leading whitespace)
+               ^
+      Step 2: "4193 with words" (no characters read because there is neither a '-' nor '+')
+               ^
+      Step 3: "4193 with words" ("4193" is read in; reading stops because the next character is a non-digit)
+                   ^
+      The parsed integer is 4193.
+      Since 4193 is in the range [-2^31, 2^31 - 1], the final result is 4193.
+      ```
+      
+      **Constraints:**
+      - `0 <= s.length <= 200`
+      - `s` consists of English letters (lower-case and upper-case), digits (`0-9`), `' '`, `'+'`, `'-'`, and `'.'`.
+    templates:
+      python: |
+        class Solution:
+            def myAtoi(self, s: str) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int myAtoi(String s) {
+                // Your code here
+                return 0;
+            }
+        }
+    test_cases:
+      - input:
+          s: "42"
+        expected: 42
+      - input:
+          s: "   -42"
+        expected: -42
+      - input:
+          s: "4193 with words"
+        expected: 4193
+      - input:
+          s: "words and 987"
+        expected: 0
+
+  - id: 34
+    title: "Longest Common Prefix"
+    difficulty: "Easy"
+    tags: ["String", "Top-50"]
+    method_info:
+      python:
+        method_name: "longestCommonPrefix"
+        parameters:
+          - name: "strs"
+            type: "List[str]"
+        return_type: "str"
+      java:
+        method_name: "longestCommonPrefix"
+        parameters:
+          - name: "strs"
+            type: "String[]"
+        return_type: "String"
+    comparison_strategy: "exact"
+    description: |
+      Write a function to find the longest common prefix string amongst an array of strings.
+      
+      If there is no common prefix, return an empty string `""`.
+      
+      **Example 1:**
+      ```
+      Input: strs = ["flower","flow","flight"]
+      Output: "fl"
+      ```
+      
+      **Example 2:**
+      ```
+      Input: strs = ["dog","racecar","car"]
+      Output: ""
+      Explanation: There is no common prefix among the input strings.
+      ```
+      
+      **Constraints:**
+      - `1 <= strs.length <= 200`
+      - `0 <= strs[i].length <= 200`
+      - `strs[i]` consists of only lowercase English letters.
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def longestCommonPrefix(self, strs: List[str]) -> str:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public String longestCommonPrefix(String[] strs) {
+                // Your code here
+                return "";
+            }
+        }
+    test_cases:
+      - input:
+          strs: ["flower", "flow", "flight"]
+        expected: "fl"
+      - input:
+          strs: ["dog", "racecar", "car"]
+        expected: ""
+      - input:
+          strs: ["ab", "a"]
+        expected: "a"
+
+  - id: 35
+    title: "Roman to Integer"
+    difficulty: "Easy"
+    tags: ["Hash Table", "Math", "String", "Top-50"]
+    method_info:
+      python:
+        method_name: "romanToInt"
+        parameters:
+          - name: "s"
+            type: "str"
+        return_type: "int"
+      java:
+        method_name: "romanToInt"
+        parameters:
+          - name: "s"
+            type: "String"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
+      
+      ```
+      Symbol       Value
+      I             1
+      V             5
+      X             10
+      L             50
+      C             100
+      D             500
+      M             1000
+      ```
+      
+      For example, `2` is written as `II` in Roman numeral, just two ones added together. `12` is written as `XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.
+      
+      Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:
+      
+      - `I` can be placed before `V` (5) and `X` (10) to make 4 and 9. 
+      - `X` can be placed before `L` (50) and `C` (100) to make 40 and 90. 
+      - `C` can be placed before `D` (500) and `M` (1000) to make 400 and 900.
+      
+      Given a roman numeral, convert it to an integer.
+      
+      **Example 1:**
+      ```
+      Input: s = "III"
+      Output: 3
+      Explanation: III = 3.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = "LVIII"
+      Output: 58
+      Explanation: L = 50, V= 5, III = 3.
+      ```
+      
+      **Example 3:**
+      ```
+      Input: s = "MCMXCIV"
+      Output: 1994
+      Explanation: M = 1000, CM = 900, XC = 90, IV = 4.
+      ```
+      
+      **Constraints:**
+      - `1 <= s.length <= 15`
+      - `s` contains only the characters `('I', 'V', 'X', 'L', 'C', 'D', 'M')`.
+      - It is **guaranteed** that `s` is a valid roman numeral in the range `[1, 3999]`.
+    templates:
+      python: |
+        class Solution:
+            def romanToInt(self, s: str) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int romanToInt(String s) {
+                // Your code here
+                return 0;
+            }
+        }
+    test_cases:
+      - input:
+          s: "III"
+        expected: 3
+      - input:
+          s: "LVIII"
+        expected: 58
+      - input:
+          s: "MCMXCIV"
+        expected: 1994
+
+  - id: 36
+    title: "Integer to Roman"
+    difficulty: "Medium"
+    tags: ["Hash Table", "Math", "String", "Top-50"]
+    method_info:
+      python:
+        method_name: "intToRoman"
+        parameters:
+          - name: "num"
+            type: "int"
+        return_type: "str"
+      java:
+        method_name: "intToRoman"
+        parameters:
+          - name: "num"
+            type: "int"
+        return_type: "String"
+    comparison_strategy: "exact"
+    description: |
+      Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
+      
+      ```
+      Symbol       Value
+      I             1
+      V             5
+      X             10
+      L             50
+      C             100
+      D             500
+      M             1000
+      ```
+      
+      For example, `2` is written as `II` in Roman numeral, just two ones added together. `12` is written as `XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.
+      
+      Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:
+      
+      - `I` can be placed before `V` (5) and `X` (10) to make 4 and 9. 
+      - `X` can be placed before `L` (50) and `C` (100) to make 40 and 90. 
+      - `C` can be placed before `D` (500) and `M` (1000) to make 400 and 900.
+      
+      Given an integer, convert it to a roman numeral.
+      
+      **Example 1:**
+      ```
+      Input: num = 3
+      Output: "III"
+      Explanation: 3 is represented as 3 ones.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: num = 58
+      Output: "LVIII"
+      Explanation: L = 50, V = 5, III = 3.
+      ```
+      
+      **Example 3:**
+      ```
+      Input: num = 1994
+      Output: "MCMXCIV"
+      Explanation: M = 1000, CM = 900, XC = 90, IV = 4.
+      ```
+      
+      **Constraints:**
+      - `1 <= num <= 3999`
+    templates:
+      python: |
+        class Solution:
+            def intToRoman(self, num: int) -> str:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public String intToRoman(int num) {
+                // Your code here
+                return "";
+            }
+        }
+    test_cases:
+      - input:
+          num: 3
+        expected: "III"
+      - input:
+          num: 58
+        expected: "LVIII"
+      - input:
+          num: 1994
+        expected: "MCMXCIV"
+
+  - id: 37
+    title: "Implement strStr()"
+    difficulty: "Easy"
+    tags: ["Two Pointers", "String", "String Matching", "Top-50"]
+    method_info:
+      python:
+        method_name: "strStr"
+        parameters:
+          - name: "haystack"
+            type: "str"
+          - name: "needle"
+            type: "str"
+        return_type: "int"
+      java:
+        method_name: "strStr"
+        parameters:
+          - name: "haystack"
+            type: "String"
+          - name: "needle"
+            type: "String"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      Given two strings `needle` and `haystack`, return the index of the first occurrence of `needle` in `haystack`, or `-1` if `needle` is not part of `haystack`.
+      
+      **Example 1:**
+      ```
+      Input: haystack = "sadbutsad", needle = "sad"
+      Output: 0
+      Explanation: "sad" occurs at index 0 and 6.
+      The first occurrence is at index 0, so we return 0.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: haystack = "leetcode", needle = "leeto"
+      Output: -1
+      Explanation: "leeto" did not occur in "leetcode", so we return -1.
+      ```
+      
+      **Constraints:**
+      - `1 <= haystack.length, needle.length <= 10^4`
+      - `haystack` and `needle` consist of only lowercase English characters.
+    templates:
+      python: |
+        class Solution:
+            def strStr(self, haystack: str, needle: str) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int strStr(String haystack, String needle) {
+                // Your code here
+                return -1;
+            }
+        }
+    test_cases:
+      - input:
+          haystack: "sadbutsad"
+          needle: "sad"
+        expected: 0
+      - input:
+          haystack: "leetcode"
+          needle: "leeto"
+        expected: -1
+      - input:
+          haystack: "hello"
+          needle: "ll"
+        expected: 2
+
+  - id: 38
+    title: "Count and Say"
+    difficulty: "Medium"
+    tags: ["String", "Top-50"]
+    method_info:
+      python:
+        method_name: "countAndSay"
+        parameters:
+          - name: "n"
+            type: "int"
+        return_type: "str"
+      java:
+        method_name: "countAndSay"
+        parameters:
+          - name: "n"
+            type: "int"
+        return_type: "String"
+    comparison_strategy: "exact"
+    description: |
+      The **count-and-say** sequence is a sequence of digit strings defined by the recursive formula:
+      
+      - `countAndSay(1) = "1"`
+      - `countAndSay(n)` is the way you would "say" the digit string from `countAndSay(n - 1)`, which is then converted into a different digit string.
+      
+      To determine how you "say" a digit string, split it into the **minimal** number of substrings such that each substring contains exactly one unique digit. Then for each substring, say the number of digits, then say the digit. Finally, concatenate every said digit.
+      
+      For example, the saying and conversion for digit string `"3322251"`:
+      
+      ```
+      "3322251"
+      Two 3's, three 2's, one 5, and one 1
+      2 3 + 3 2 + 1 5 + 1 1
+      "23321511"
+      ```
+      
+      Given a positive integer `n`, return the `nth` term of the **count-and-say** sequence.
+      
+      **Example 1:**
+      ```
+      Input: n = 1
+      Output: "1"
+      Explanation: This is the base case.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: n = 4
+      Output: "1211"
+      Explanation:
+      countAndSay(1) = "1"
+      countAndSay(2) = say "1" = one 1 = "11"
+      countAndSay(3) = say "11" = two 1's = "21"
+      countAndSay(4) = say "21" = one 2 + one 1 = "12" + "11" = "1211"
+      ```
+      
+      **Constraints:**
+      - `1 <= n <= 30`
+    templates:
+      python: |
+        class Solution:
+            def countAndSay(self, n: int) -> str:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public String countAndSay(int n) {
+                // Your code here
+                return "";
+            }
+        }
+    test_cases:
+      - input:
+          n: 1
+        expected: "1"
+      - input:
+          n: 4
+        expected: "1211"
+      - input:
+          n: 5
+        expected: "111221"
+
+  - id: 39
+    title: "Multiply Strings"
+    difficulty: "Medium"
+    tags: ["Math", "String", "Simulation", "Top-50"]
+    method_info:
+      python:
+        method_name: "multiply"
+        parameters:
+          - name: "num1"
+            type: "str"
+          - name: "num2"
+            type: "str"
+        return_type: "str"
+      java:
+        method_name: "multiply"
+        parameters:
+          - name: "num1"
+            type: "String"
+          - name: "num2"
+            type: "String"
+        return_type: "String"
+    comparison_strategy: "exact"
+    description: |
+      Given two non-negative integers `num1` and `num2` represented as strings, return the product of `num1` and `num2`, also represented as a string.
+      
+      **Note:** You must not use any built-in BigInteger library or convert the inputs to integers directly.
+      
+      **Example 1:**
+      ```
+      Input: num1 = "2", num2 = "3"
+      Output: "6"
+      ```
+      
+      **Example 2:**
+      ```
+      Input: num1 = "123", num2 = "456"
+      Output: "56088"
+      ```
+      
+      **Constraints:**
+      - `1 <= num1.length, num2.length <= 200`
+      - `num1` and `num2` consist of digits only.
+      - Both `num1` and `num2` do not contain any leading zero, except the number 0 itself.
+    templates:
+      python: |
+        class Solution:
+            def multiply(self, num1: str, num2: str) -> str:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public String multiply(String num1, String num2) {
+                // Your code here
+                return "";
+            }
+        }
+    test_cases:
+      - input:
+          num1: "2"
+          num2: "3"
+        expected: "6"
+      - input:
+          num1: "123"
+          num2: "456"
+        expected: "56088"
+      - input:
+          num1: "0"
+          num2: "0"
+        expected: "0"
+
+  - id: 40
+    title: "Add Binary"
+    difficulty: "Easy"
+    tags: ["Math", "String", "Bit Manipulation", "Simulation", "Top-50"]
+    method_info:
+      python:
+        method_name: "addBinary"
+        parameters:
+          - name: "a"
+            type: "str"
+          - name: "b"
+            type: "str"
+        return_type: "str"
+      java:
+        method_name: "addBinary"
+        parameters:
+          - name: "a"
+            type: "String"
+          - name: "b"
+            type: "String"
+        return_type: "String"
+    comparison_strategy: "exact"
+    description: |
+      Given two binary strings `a` and `b`, return their sum as a binary string.
+      
+      **Example 1:**
+      ```
+      Input: a = "11", b = "1"
+      Output: "100"
+      ```
+      
+      **Example 2:**
+      ```
+      Input: a = "1010", b = "1011"
+      Output: "10101"
+      ```
+      
+      **Constraints:**
+      - `1 <= a.length, b.length <= 10^4`
+      - `a` and `b` consist only of `'0'` or `'1'` characters.
+      - Each string does not contain leading zeros except for the zero itself.
+    templates:
+      python: |
+        class Solution:
+            def addBinary(self, a: str, b: str) -> str:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public String addBinary(String a, String b) {
+                // Your code here
+                return "";
+            }
+        }
+    test_cases:
+      - input:
+          a: "11"
+          b: "1"
+        expected: "100"
+      - input:
+          a: "1010"
+          b: "1011"
+        expected: "10101"
+      - input:
+          a: "0"
+          b: "0"
+        expected: "0"
+
+  - id: 41
+    title: "Valid Anagram"
+    difficulty: "Easy"
+    tags: ["Hash Table", "String", "Sorting", "Top-50"]
+    method_info:
+      python:
+        method_name: "isAnagram"
+        parameters:
+          - name: "s"
+            type: "str"
+          - name: "t"
+            type: "str"
+        return_type: "bool"
+      java:
+        method_name: "isAnagram"
+        parameters:
+          - name: "s"
+            type: "String"
+          - name: "t"
+            type: "String"
+        return_type: "boolean"
+    comparison_strategy: "exact"
+    description: |
+      Given two strings `s` and `t`, return `true` *if* `t` *is an anagram of* `s`*, and* `false` *otherwise*.
+      
+      An **Anagram** is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+      
+      **Example 1:**
+      ```
+      Input: s = "anagram", t = "nagaram"
+      Output: true
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = "rat", t = "car"
+      Output: false
+      ```
+      
+      **Constraints:**
+      - `1 <= s.length, t.length <= 5 * 10^4`
+      - `s` and `t` consist of lowercase English letters only.
+      
+      **Follow up:** What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
+    templates:
+      python: |
+        class Solution:
+            def isAnagram(self, s: str, t: str) -> bool:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public boolean isAnagram(String s, String t) {
+                // Your code here
+                return false;
+            }
+        }
+    test_cases:
+      - input:
+          s: "anagram"
+          t: "nagaram"
+        expected: true
+      - input:
+          s: "rat"
+          t: "car"
+        expected: false
+      - input:
+          s: "a"
+          t: "ab"
+        expected: false
+
+  - id: 42
+    title: "Reverse String"
+    difficulty: "Easy"
+    tags: ["Two Pointers", "String", "Recursion", "Top-50"]
+    method_info:
+      python:
+        method_name: "reverseString"
+        parameters:
+          - name: "s"
+            type: "List[str]"
+            is_mutable: true
+        return_type: "None"
+        returns_modified_input: "s"
+      java:
+        method_name: "reverseString"
+        parameters:
+          - name: "s"
+            type: "char[]"
+            is_mutable: true
+        return_type: "void"
+        returns_modified_input: "s"
+    comparison_strategy: "exact"
+    description: |
+      Write a function that reverses a string. The input string is given as an array of characters `s`.
+      
+      You must do this by modifying the input array **in-place** with `O(1)` extra memory.
+      
+      **Example 1:**
+      ```
+      Input: s = ["h","e","l","l","o"]
+      Output: ["o","l","l","e","h"]
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = ["H","a","n","n","a","h"]
+      Output: ["h","a","n","n","a","H"]
+      ```
+      
+      **Constraints:**
+      - `1 <= s.length <= 10^5`
+      - `s[i]` is a printable ascii character.
+    templates:
+      python: |
+        from typing import List
+        
+        class Solution:
+            def reverseString(self, s: List[str]) -> None:
+                """
+                Do not return anything, modify s in-place instead.
+                """
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public void reverseString(char[] s) {
+                // Your code here
+            }
+        }
+    test_cases:
+      - input:
+          s: ["h", "e", "l", "l", "o"]
+        expected: ["o", "l", "l", "e", "h"]
+      - input:
+          s: ["H", "a", "n", "n", "a", "h"]
+        expected: ["h", "a", "n", "n", "a", "H"]
+
+  - id: 43
+    title: "First Unique Character in a String"
+    difficulty: "Easy"
+    tags: ["Hash Table", "String", "Queue", "Counting", "Top-50"]
+    method_info:
+      python:
+        method_name: "firstUniqChar"
+        parameters:
+          - name: "s"
+            type: "str"
+        return_type: "int"
+      java:
+        method_name: "firstUniqChar"
+        parameters:
+          - name: "s"
+            type: "String"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      Given a string `s`, *find the first non-repeating character in it and return its index*. If it does not exist, return `-1`.
+      
+      **Example 1:**
+      ```
+      Input: s = "leetcode"
+      Output: 0
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = "loveleetcode"
+      Output: 2
+      ```
+      
+      **Example 3:**
+      ```
+      Input: s = "aabb"
+      Output: -1
+      ```
+      
+      **Constraints:**
+      - `1 <= s.length <= 10^5`
+      - `s` consists of only lowercase English letters.
+    templates:
+      python: |
+        class Solution:
+            def firstUniqChar(self, s: str) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int firstUniqChar(String s) {
+                // Your code here
+                return -1;
+            }
+        }
+    test_cases:
+      - input:
+          s: "leetcode"
+        expected: 0
+      - input:
+          s: "loveleetcode"
+        expected: 2
+      - input:
+          s: "aabb"
+        expected: -1
+
+  - id: 44
+    title: "Valid Palindrome"
+    difficulty: "Easy"
+    tags: ["Two Pointers", "String", "Top-50"]
+    method_info:
+      python:
+        method_name: "isPalindrome"
+        parameters:
+          - name: "s"
+            type: "str"
+        return_type: "bool"
+      java:
+        method_name: "isPalindrome"
+        parameters:
+          - name: "s"
+            type: "String"
+        return_type: "boolean"
+    comparison_strategy: "exact"
+    description: |
+      A phrase is a **palindrome** if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+      
+      Given a string `s`, return `true` *if it is a palindrome, or* `false` *otherwise*.
+      
+      **Example 1:**
+      ```
+      Input: s = "A man, a plan, a canal: Panama"
+      Output: true
+      Explanation: "amanaplanacanalpanama" is a palindrome.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = "race a car"
+      Output: false
+      Explanation: "raceacar" is not a palindrome.
+      ```
+      
+      **Example 3:**
+      ```
+      Input: s = " "
+      Output: true
+      Explanation: s is an empty string "" after removing non-alphanumeric characters.
+      Since an empty string reads the same forward and backward, it is a palindrome.
+      ```
+      
+      **Constraints:**
+      - `1 <= s.length <= 2 * 10^5`
+      - `s` consists only of printable ASCII characters.
+    templates:
+      python: |
+        class Solution:
+            def isPalindrome(self, s: str) -> bool:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public boolean isPalindrome(String s) {
+                // Your code here
+                return false;
+            }
+        }
+    test_cases:
+      - input:
+          s: "A man, a plan, a canal: Panama"
+        expected: true
+      - input:
+          s: "race a car"
+        expected: false
+      - input:
+          s: " "
+        expected: true
+
+  - id: 45
+    title: "String to Integer (atoi) - Enhanced"
+    difficulty: "Medium"
+    tags: ["String", "Top-50"]
+    method_info:
+      python:
+        method_name: "myAtoiEnhanced"
+        parameters:
+          - name: "s"
+            type: "str"
+        return_type: "int"
+      java:
+        method_name: "myAtoiEnhanced"
+        parameters:
+          - name: "s"
+            type: "String"
+        return_type: "int"
+    comparison_strategy: "exact"
+    description: |
+      Implement a more robust version of the `myAtoi` function that handles edge cases better.
+      
+      The algorithm for `myAtoiEnhanced(string s)` is as follows:
+      
+      1. Read in and ignore any leading whitespace.
+      2. Check if the next character (if not already at the end of the string) is `'-'` or `'+'`. Read this character in if it is either. This determines if the final result is negative or positive respectively. Assume the result is positive if neither is present.
+      3. Read in next the characters until the next non-digit character or the end of the input is reached. The rest of the string is ignored.
+      4. Convert these digits into an integer (i.e. `"123" -> 123`, `"0032" -> 32`). If no digits were read, then the integer is `0`. Change the sign as necessary (from step 2).
+      5. If the integer is out of the 32-bit signed integer range `[-2^31, 2^31 - 1]`, then clamp the integer so that it remains in the range. Specifically, integers less than `-2^31` should be clamped to `-2^31`, and integers greater than `2^31 - 1` should be clamped to `2^31 - 1`.
+      6. Return the integer as the final result.
+      
+      **Enhanced Features:**
+      - Handle multiple consecutive signs
+      - Better whitespace handling
+      - More robust overflow detection
+      
+      **Example 1:**
+      ```
+      Input: s = "   +-42"
+      Output: 0
+      Explanation: Multiple signs are not allowed.
+      ```
+      
+      **Example 2:**
+      ```
+      Input: s = "   -+42"
+      Output: 0
+      Explanation: Multiple signs are not allowed.
+      ```
+      
+      **Example 3:**
+      ```
+      Input: s = "2147483648"
+      Output: 2147483647
+      Explanation: Overflow detected and clamped.
+      ```
+      
+      **Constraints:**
+      - `0 <= s.length <= 200`
+      - `s` consists of English letters (lower-case and upper-case), digits (`0-9`), `' '`, `'+'`, `'-'`, and `'.'`.
+    templates:
+      python: |
+        class Solution:
+            def myAtoiEnhanced(self, s: str) -> int:
+                # Your code here
+                pass
+      java: |
+        class Solution {
+            public int myAtoiEnhanced(String s) {
+                // Your code here
+                return 0;
+            }
+        }
+    test_cases:
+      - input:
+          s: "   +-42"
+        expected: 0
+      - input:
+          s: "   -+42"
+        expected: 0
+      - input:
+          s: "2147483648"
+        expected: 2147483647
+      - input:
+          s: "-2147483649"
+        expected: -2147483648
